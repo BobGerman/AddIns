@@ -60,7 +60,5 @@ bin
 *.user
 
 node_modules/**
-packages/**
 typings/**
 .vscode/**
-.awcache/**

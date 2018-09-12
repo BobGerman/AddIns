@@ -1,20 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'source-map',
     entry: {
-        app: './src/index.ts',
-        'function-file': './function-file/function-file.ts'
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.html', '.js']
+        polyfill: 'babel-polyfill',
+        app: './src/index.js',
+        'function-file': './function-file/function-file.js'
     },
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
-                use: 'ts-loader'
+                use: 'babel-loader'
             },
             {
                 test: /\.html$/,
@@ -30,7 +27,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            chunks: ['app']
+            chunks: ['polyfill', 'app']
         }),
         new HtmlWebpackPlugin({
             template: './function-file/function-file.html',
