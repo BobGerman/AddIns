@@ -22,17 +22,6 @@ function insertDefaultGist(event) {
   var gapMinutes = 10;               // Time gap in minutes
   var gapMsec = gapMinutes * 60000;  // Time gap in milliseconds
 
-  // var getOptions = {
-  //   // Pass information that can be used
-  //   // in the callback
-  //     asyncContext: {verb:"Get"}
-  // }
-  // var setOptions = {
-  //   // Pass information that can be used
-  //   // in the callback
-  //     asyncContext: {verb:"Set"}
-  // }
-
   // Get the existing end time
   Office.context.mailbox.item.end.getAsync({
     asyncContent: {verb: "Get"}
