@@ -58,19 +58,3 @@ function toggleGap(event) {
   });
 
 }
-
-function receiveMessage(message) {
-  config = JSON.parse(message.message);
-  setConfig(config, function(result) {
-    settingsDialog.close();
-    settingsDialog = null;
-    btnEvent.completed();
-    btnEvent = null;
-  });
-}
-
-function dialogClosed(message) {
-  settingsDialog = null;
-  btnEvent.completed();
-  btnEvent = null;
-}
