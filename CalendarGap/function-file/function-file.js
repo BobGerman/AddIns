@@ -3,7 +3,6 @@ var btnEvent;
 
 // The initialize function must be run each time a new page is loaded
 Office.initialize = function (reason) {
-  config = getConfig();
 };
 
 // Add any ui-less function here
@@ -17,7 +16,7 @@ function showError(error) {
 
 var settingsDialog;
 
-function insertDefaultGist(event) {
+function toggleGap(event) {
 
   var gapMinutes = 10;               // Time gap in minutes
   var gapMsec = gapMinutes * 60000;  // Time gap in milliseconds
